@@ -16,6 +16,12 @@ import com.zzz.cj2356dict.state.trans.InputMethodStatusCnCj5;
 import com.zzz.cj2356dict.state.trans.InputMethodStatusCnCj6;
 import com.zzz.cj2356dict.state.trans.InputMethodStatusCnCjMs;
 import com.zzz.cj2356dict.state.trans.InputMethodStatusCnCjYhqm;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElseKarina;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElseKorea;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElseManju;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElsePy;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElseSghm;
+import com.zzz.cj2356dict.state.trans.InputMethodStatusCnElseZyfh;
 import com.zzz.cj2356dict.utils.Cangjie2356ConfigUtils;
 import com.zzz.cj2356dict.utils.Cangjie2356IMsUtils;
 import com.zzz.cj2356dict.utils.StringUtils;
@@ -64,6 +70,18 @@ public class SettingDictMbUtils {
                 im = new InputMethodStatusCnCjYhqm(context);
                 allCjIMsMap.put(im.getSubType(), im);
                 im = new InputMethodStatusCnCj2(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElseSghm(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElsePy(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElseKarina(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElseManju(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElseKorea(context);
+                allCjIMsMap.put(im.getSubType(), im);
+                im = new InputMethodStatusCnElseZyfh(context);
                 allCjIMsMap.put(im.getSubType(), im);
 
                 for (String key : allCjIMsMap.keySet()) {
