@@ -38,8 +38,8 @@ public class SettingLoayoutTabIniter {
         settingLayoutScrollContent = (LinearLayout) ((Activity) context).findViewById(R.id.settingLayoutScrollContent);
 
         settingTabNames = new ArrayList<String>();
-        settingTabNames.add(SETTING_TAB_LOG);
         settingTabNames.add(SETTING_TAB_DICT);
+        settingTabNames.add(SETTING_TAB_LOG);
 
         settingTextViews = new ArrayList<TextView>();
         for (int i = 0; i < settingTabNames.size(); i++) {
@@ -63,8 +63,8 @@ public class SettingLoayoutTabIniter {
         SettingVLogIniter.initSettingVLog(context);
 
         SettingDictIniter.initSettingDict(context);
-        // 先隱藏字典
-        SettingDictIniter.hideSettingVLog();
+        // 先隱藏一個
+        settingTextViews.get(0).performClick();
     }
 
     /**
