@@ -70,23 +70,24 @@ public class InputMethodStatusCnElseJyutp extends InputMethodStatusCnElse {
         }
 
         // 如果不展示編碼，就去褈
-//        if (false == CandidateItemTextView.showEncode && null != items && !items.isEmpty()) {
-//            Set<String> chaSet = new HashSet<String>();
-//            for (int i = items.size() - 1; i >= 0; i--) {
-//                Item it = items.get(i);
-//                if (chaSet.contains(it.getCharacter())) {
-//                    items.remove(i);
-//                } else {
-//                    chaSet.add(it.getCharacter());
-//                }
-//            }
-//        }
+        // if (false == CandidateItemTextView.showEncode && null != items &&
+        // !items.isEmpty()) {
+        // Set<String> chaSet = new HashSet<String>();
+        // for (int i = items.size() - 1; i >= 0; i--) {
+        // Item it = items.get(i);
+        // if (chaSet.contains(it.getCharacter())) {
+        // items.remove(i);
+        // } else {
+        // chaSet.add(it.getCharacter());
+        // }
+        // }
+        // }
         return items;
     }
 
     @Override
     public boolean couldContinueInputing(String code) {
-        return MbUtils.countDBLikeCode(MbUtils.TYPE_CODE_JYUTPING, code) > 0;
+        return MbUtils.existsDBLikeCode(MbUtils.TYPE_CODE_JYUTPING, code);
     }
 
     @Override
