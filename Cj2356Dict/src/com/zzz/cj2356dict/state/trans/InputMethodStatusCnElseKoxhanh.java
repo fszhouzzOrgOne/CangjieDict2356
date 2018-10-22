@@ -8,22 +8,24 @@ import com.zzz.cj2356dict.mb.MbUtils;
 import android.content.Context;
 
 /**
- * 朝鮮諺文
- * 
- * @author t
- * @time 2017-2-9下午9:36:55
+ * 中古漢語輸入法
  */
-public class InputMethodStatusCnElseKorea extends InputMethodStatusCnElse {
+public class InputMethodStatusCnElseKoxhanh extends InputMethodStatusCnElse {
 
-    public InputMethodStatusCnElseKorea(Context con) {
+    public InputMethodStatusCnElseKoxhanh(Context con) {
         super(con);
-        this.setSubType(MbUtils.TYPE_CODE_CJGENKOREA);
-        this.setSubTypeName("韓");
+        this.setSubType(MbUtils.TYPE_CODE_CJGEN_KOXHANH);
+        this.setSubTypeName("漢");
+    }
+
+    @Override
+    public String getInputMethodName() {
+        return MbUtils.getInputMethodName(this.getSubType());
     }
 
     @Override
     public List<Item> getCandidatesInfo(String code, boolean extraResolve) {
-        return MbUtils.selectDbByCode(this.getSubType(), code, (null != code && code.length() > 1), code, false);
+        return MbUtils.selectDbByCode(this.getSubType(), code, false, code, false);
     }
 
     @Override
@@ -34,11 +36,6 @@ public class InputMethodStatusCnElseKorea extends InputMethodStatusCnElse {
     @Override
     public boolean couldContinueInputing(String code) {
         return MbUtils.existsDBLikeCode(this.getSubType(), code);
-    }
-
-    @Override
-    public String getInputMethodName() {
-        return MbUtils.getInputMethodName(this.getSubType());
     }
 
 }
