@@ -123,6 +123,9 @@ public class MbUtils {
         if (null == getMbdb() || null == cha || cha.trim().length() == 0) {
             return null;
         }
+        if (cha.contains("'")) {
+            return null;
+        }
         cha = cha.trim();
 
         String sql = getQuerySql(typeCode, cha, null);
